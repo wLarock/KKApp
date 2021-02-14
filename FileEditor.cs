@@ -48,10 +48,37 @@ namespace KKApp
 
         public string[] ReadDivisions()
         {
-            if (File.ReadAllLines(divisionsPath) == null)
+            string[] divisions = File.ReadAllLines(divisionsPath);
+
+            if (divisions == null)
                 return new string[0];
             else
-                return File.ReadAllLines(divisionsPath);
+                return divisions;
+        }
+
+        public List<Player> ReadPlayers(string division)
+        {
+            string[] players = File.ReadAllLines(playerPath).Where(p => p.Contains(division)).ToArray();
+            List<Player> sortedPlayers = new List<Player>();
+            
+
+            if (players == null)
+                return sortedPlayers;
+            else
+            {
+                for(int i = 0; i < players.Length; i++)
+                {
+                    string[] currentplayer = players[i].Split(',');
+                    Player player = new Player();
+
+                    player.Name = currentplayer[0];
+                    player.Division = currentplayer[1];
+                    player.score = Int32.Parse(currentplayer[2]);
+                    player.MatchesPlayed = Int32.Parse(currentplayer[3]);
+                    sortedPlayers.Add(player);
+                }
+                return sortedPlayers.OrderByDescending(p => p.MatchesPlayed).OrderByDescending(p => p.score).ToList();
+            }
         }
     }
 }

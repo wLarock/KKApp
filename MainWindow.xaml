@@ -49,8 +49,10 @@
         </TabControl>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="479" Margin="590,10,0,0" VerticalAlignment="Top" Width="334">
             <Grid>
-                <TextBlock x:Name="txbDisplay" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="417" Width="312"/>
+                <TextBlock x:Name="txbNames" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="417" Width="236"/>
                 <Button x:Name="btnCopy" Content="kopieer" Margin="10,432,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="312" Height="35" Click="btnCopy_Click"/>
+                <TextBlock x:Name="txbScores" HorizontalAlignment="Left" Margin="246,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="417" Width="43"/>
+                <TextBlock x:Name="txbMatches" HorizontalAlignment="Left" Margin="294,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="417" Width="28"/>
             </Grid>
         </Border>
 
