@@ -32,7 +32,13 @@ namespace KKApp
 
         private void btnAddDivision_Click(object sender, RoutedEventArgs e)
         {
-            fe.SaveDivision(txtDivisionName.Text);
+            string divisionName = txtDivisionName.Text;
+            if (string.IsNullOrEmpty(divisionName))
+            {
+                MessageBox.Show("Geen reeksnaam ingegeven", "KKApp", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            fe.SaveDivision(divisionName);
             lstDivisions.Items.Clear();
             fillDivisionList();
             txtDivisionName.Text = "";
@@ -40,7 +46,19 @@ namespace KKApp
 
         private void btnAddPlayer_Click(object sender, RoutedEventArgs e)
         {
-            fe.SavePlayer(txtName.Text, lblDivisionPlayer.Content.ToString());
+            string division = lblDivisionPlayer.Content.ToString();
+            string name = txtName.Text;
+
+            if (string.IsNullOrEmpty(name))
+            {
+                MessageBox.Show("Geen naam ingegeven", "KKApp", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            if (division != "Selecteer een reeks")
+                fe.SavePlayer(name, division);
+            else
+                MessageBox.Show("Geen reeks geselecteerd", "KKApp", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         private void btnAddScore_Click(object sender, RoutedEventArgs e)
@@ -50,7 +68,7 @@ namespace KKApp
 
         private void btnCopy_Click(object sender, RoutedEventArgs e)
         {
-
+            Clipboard.SetText(txbDisplay.Text);
         }
 
         private void fillDivisionList()

@@ -16,7 +16,7 @@
                         <ColumnDefinition Width="67*"/>
                         <ColumnDefinition Width="477*"/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="btnAddScore" Content="Toevoegen" Margin="133.872,112,0,0" VerticalAlignment="Top" Height="36" HorizontalAlignment="Left" Width="142" Grid.Column="1"/>
+                    <Button x:Name="btnAddScore" Content="Toevoegen" Margin="133.872,112,0,0" VerticalAlignment="Top" Height="36" HorizontalAlignment="Left" Width="142" Grid.Column="1" Click="btnAddScore_Click"/>
                     <ComboBox x:Name="cmbPlayer1" HorizontalAlignment="Left" Margin="12,48,0,0" VerticalAlignment="Top" Width="234" Grid.ColumnSpan="2"/>
                     <ComboBox x:Name="cmbPlayer2" HorizontalAlignment="Left" Margin="232.872,48,0,0" VerticalAlignment="Top" Width="234" Grid.Column="1"/>
                     <CheckBox x:Name="ckbWinner1" Content="Winnaar" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
@@ -50,7 +50,7 @@
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="479" Margin="590,10,0,0" VerticalAlignment="Top" Width="334">
             <Grid>
                 <TextBlock x:Name="txbDisplay" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="417" Width="312"/>
-                <Button x:Name="btnCopy" Content="kopieer" Margin="10,432,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="312" Height="35"/>
+                <Button x:Name="btnCopy" Content="kopieer" Margin="10,432,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="312" Height="35" Click="btnCopy_Click"/>
             </Grid>
         </Border>
 
