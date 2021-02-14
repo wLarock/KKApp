@@ -8,7 +8,7 @@
         Title="KKApp" Height="530.084" Width="942.37"
         Icon="http://www.tczedelgem.be/wp-content/uploads/2016/02/Logo-TCZ.jpg">
     <Grid>
-        <ListBox x:Name="lstDivisions" HorizontalAlignment="Left" Height="288" Margin="35,10,0,0" VerticalAlignment="Top" Width="550"/>
+        <ListBox x:Name="lstDivisions" HorizontalAlignment="Left" Height="288" Margin="35,10,0,0" VerticalAlignment="Top" Width="550" SelectionChanged="lstDivisions_SelectionChanged"/>
         <TabControl HorizontalAlignment="Left" Height="186" Margin="35,303,0,0" VerticalAlignment="Top" Width="550">
             <TabItem Header="Score">
                 <Grid Background="#FFE5E5E5">
@@ -36,14 +36,14 @@
                     <Label x:Name="lblDivisionPlayer" Content="Selecteer een reeks" Margin="200,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.041,0.534" FontWeight="Bold" Width="118" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Grid.Column="1"/>
                     <Label Content="Naam en voornaam:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="txtName" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="245"/>
-                    <Button x:Name="btnAddPlayer" Content="Toevoegen" Grid.Column="1" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Width="75" Height="23"/>
+                    <Button x:Name="btnAddPlayer" Content="Toevoegen" Grid.Column="1" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="btnAddPlayer_Click"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Reeks">
                 <Grid Background="#FFE5E5E5">
                     <Label Content="Reeksnaam:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="txtDivisionName" HorizontalAlignment="Left" Height="23" Margin="10,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"/>
-                    <Button Content="Toevoegen" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" Width="75" Height="23"/>
+                    <Button x:Name="btnAddDivision" Content="Toevoegen" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="btnAddDivision_Click"/>
                 </Grid>
             </TabItem>
         </TabControl>
