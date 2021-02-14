@@ -1,0 +1,15 @@
+E:\Repos\KKApp\bin\Debug\KKApp.exe.config
+E:\Repos\KKApp\bin\Debug\KKApp.exe
+E:\Repos\KKApp\bin\Debug\KKApp.pdb
+E:\Repos\KKApp\obj\Debug\KKApp.csprojAssemblyReference.cache
+E:\Repos\KKApp\obj\Debug\MainWindow.g.cs
+E:\Repos\KKApp\obj\Debug\App.g.cs
+E:\Repos\KKApp\obj\Debug\KKApp_MarkupCompile.cache
+E:\Repos\KKApp\obj\Debug\KKApp_MarkupCompile.lref
+E:\Repos\KKApp\obj\Debug\MainWindow.baml
+E:\Repos\KKApp\obj\Debug\KKApp.g.resources
+E:\Repos\KKApp\obj\Debug\KKApp.Properties.Resources.resources
+E:\Repos\KKApp\obj\Debug\KKApp.csproj.GenerateResource.cache
+E:\Repos\KKApp\obj\Debug\KKApp.csproj.CoreCompileInputs.cache
+E:\Repos\KKApp\obj\Debug\KKApp.exe
+E:\Repos\KKApp\obj\Debug\KKApp.pdb

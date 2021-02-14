@@ -1,0 +1,58 @@
+﻿<Window x:Class="KKApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KKApp"
+        mc:Ignorable="d"
+        Title="KKApp" Height="530.084" Width="942.37"
+        Icon="http://www.tczedelgem.be/wp-content/uploads/2016/02/Logo-TCZ.jpg">
+    <Grid>
+        <ListBox x:Name="lstDivisions" HorizontalAlignment="Left" Height="288" Margin="35,10,0,0" VerticalAlignment="Top" Width="550"/>
+        <TabControl HorizontalAlignment="Left" Height="186" Margin="35,303,0,0" VerticalAlignment="Top" Width="550">
+            <TabItem Header="Score">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="67*"/>
+                        <ColumnDefinition Width="477*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnAddScore" Content="Toevoegen" Margin="133.872,112,0,0" VerticalAlignment="Top" Height="36" HorizontalAlignment="Left" Width="142" Grid.Column="1"/>
+                    <ComboBox x:Name="cmbPlayer1" HorizontalAlignment="Left" Margin="12,48,0,0" VerticalAlignment="Top" Width="234" Grid.ColumnSpan="2"/>
+                    <ComboBox x:Name="cmbPlayer2" HorizontalAlignment="Left" Margin="232.872,48,0,0" VerticalAlignment="Top" Width="234" Grid.Column="1"/>
+                    <CheckBox x:Name="ckbWinner1" Content="Winnaar" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                    <CheckBox x:Name="ckbWinner2" Content="Winnaar" HorizontalAlignment="Left" Margin="232.872,80,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <TextBox x:Name="txtGames1" HorizontalAlignment="Left" Height="27" Margin="11.872,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56" Grid.Column="1"/>
+                    <TextBox x:Name="txtGames2" HorizontalAlignment="Left" Height="27" Margin="301.872,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56" Grid.Column="1"/>
+                    <Label x:Name="lblDivisionScore" Content="Selecteer een reeks" Margin="144.872,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.041,0.534" FontWeight="Bold" Width="118" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Grid.Column="1"/>
+                    <Label Content="Vs" HorizontalAlignment="Left" Margin="183.872,48,0,0" VerticalAlignment="Top" Width="44" HorizontalContentAlignment="Center" Grid.Column="1"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Speler">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="133*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="lblDivisionPlayer" Content="Selecteer een reeks" Margin="200,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.041,0.534" FontWeight="Bold" Width="118" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Grid.Column="1"/>
+                    <Label Content="Naam en voornaam:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtName" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="245"/>
+                    <Button x:Name="btnAddPlayer" Content="Toevoegen" Grid.Column="1" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Width="75" Height="23"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Reeks">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Reeksnaam:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtDivisionName" HorizontalAlignment="Left" Height="23" Margin="10,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"/>
+                    <Button Content="Toevoegen" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" Width="75" Height="23"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="479" Margin="590,10,0,0" VerticalAlignment="Top" Width="334">
+            <Grid>
+                <TextBlock x:Name="txbDisplay" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="417" Width="312"/>
+                <Button x:Name="btnCopy" Content="kopieer" Margin="10,432,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="312" Height="35"/>
+            </Grid>
+        </Border>
+
+    </Grid>
+</Window>
