@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KKApp"
         mc:Ignorable="d"
-        Title="KKApp" Height="530.084" Width="942.37"
+        Title="KKApp" Height="537.441" Width="962.806"
         Icon="http://www.tczedelgem.be/wp-content/uploads/2016/02/Logo-TCZ.jpg">
     <Grid>
         <ListBox x:Name="lstDivisions" HorizontalAlignment="Left" Height="288" Margin="35,10,0,0" VerticalAlignment="Top" Width="550" SelectionChanged="lstDivisions_SelectionChanged"/>
@@ -19,8 +19,8 @@
                     <Button x:Name="btnAddScore" Content="Toevoegen" Margin="133.872,112,0,0" VerticalAlignment="Top" Height="36" HorizontalAlignment="Left" Width="142" Grid.Column="1" Click="btnAddScore_Click"/>
                     <ComboBox x:Name="cmbPlayer1" HorizontalAlignment="Left" Margin="12,48,0,0" VerticalAlignment="Top" Width="234" Grid.ColumnSpan="2"/>
                     <ComboBox x:Name="cmbPlayer2" HorizontalAlignment="Left" Margin="232.872,48,0,0" VerticalAlignment="Top" Width="234" Grid.Column="1"/>
-                    <CheckBox x:Name="ckbWinner1" Content="Winnaar" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-                    <CheckBox x:Name="ckbWinner2" Content="Winnaar" HorizontalAlignment="Left" Margin="232.872,80,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <CheckBox x:Name="ckbWinner1" Content="Winnaar" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Checked="ckbWinner1_Checked" Unchecked="ckbWinner1_Unchecked"/>
+                    <CheckBox x:Name="ckbWinner2" Content="Winnaar" HorizontalAlignment="Left" Margin="232.872,80,0,0" VerticalAlignment="Top" Grid.Column="1" Checked="ckbWinner2_Checked" Unchecked="ckbWinner2_Unchecked"/>
                     <TextBox x:Name="txtGames1" HorizontalAlignment="Left" Height="27" Margin="11.872,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56" Grid.Column="1"/>
                     <TextBox x:Name="txtGames2" HorizontalAlignment="Left" Height="27" Margin="301.872,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56" Grid.Column="1"/>
                     <Label x:Name="lblDivisionScore" Content="Selecteer een reeks" Margin="144.872,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.041,0.534" FontWeight="Bold" Width="118" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Grid.Column="1"/>

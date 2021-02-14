@@ -43,7 +43,48 @@ namespace KKApp
 
         public void SaveScore(string player1, string player2, bool player1Wins, int gamesWon)
         {
-            
+            string[] players = File.ReadAllLines(playerPath);
+            string winner = "";
+            string loser = "";
+            string tempFile = Path.GetTempFileName();
+
+            if (player1Wins)
+            {
+                winner = Array.Find(players, p => p.Contains(player1));
+                loser = Array.Find(players, p => p.Contains(player2));
+            }
+            else
+            {
+                winner = Array.Find(players, p => p.Contains(player2));
+                loser = Array.Find(players, p => p.Contains(player1));
+            }
+
+            using (StreamReader sr = new StreamReader(playerPath))
+            using (StreamWriter sw = new StreamWriter(tempFile))
+            {
+                string line;
+
+                while ((line = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(winner);
+                    Console.WriteLine(line);
+                    if (line != winner && line != loser)
+                    {
+                        sw.WriteLine(line);
+                    }
+                }
+
+                string[] winnerArray = winner.Split(',');
+                string newPlayer1 = $"{winnerArray[0]},{winnerArray[1]},{int.Parse(winnerArray[2]) + 15},{int.Parse(winnerArray[3]) + 1}";
+                string[] loserArray = loser.Split(',');
+                string newPlayer2 = $"{loserArray[0]},{loserArray[1]},{int.Parse(loserArray[2]) + gamesWon},{int.Parse(loserArray[3]) + 1}";
+
+                sw.WriteLine(newPlayer1);
+                sw.WriteLine(newPlayer2);
+            }
+
+            File.Delete(playerPath);
+            File.Move(tempFile, playerPath);
         }
 
         public string[] ReadDivisions()
@@ -73,8 +114,8 @@ namespace KKApp
 
                     player.Name = currentplayer[0];
                     player.Division = currentplayer[1];
-                    player.score = Int32.Parse(currentplayer[2]);
-                    player.MatchesPlayed = Int32.Parse(currentplayer[3]);
+                    player.score = int.Parse(currentplayer[2]);
+                    player.MatchesPlayed = int.Parse(currentplayer[3]);
                     sortedPlayers.Add(player);
                 }
                 return sortedPlayers.OrderByDescending(p => p.MatchesPlayed).OrderByDescending(p => p.score).ToList();
