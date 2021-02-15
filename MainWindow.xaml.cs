@@ -42,9 +42,9 @@ namespace KKApp
             }
 
             fe.SaveDivision(divisionName);
-            lstDivisions.Items.Clear();
-            fillDivisionList();
             txtDivisionName.Text = "";
+
+            RefreshList();
         }
 
         private void btnAddPlayer_Click(object sender, RoutedEventArgs e)
@@ -62,7 +62,8 @@ namespace KKApp
             {
                 fe.SavePlayer(name, division);
                 txtName.Text = "";
-                lstDivisions.Items.Refresh();
+
+                RefreshList();
             }
             else
                 MessageBox.Show("Geen reeks geselecteerd", "KKApp", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -72,7 +73,6 @@ namespace KKApp
         {
             string player1 = cmbPlayer1.Text;
             string player2 = cmbPlayer2.Text;
-            string gamesWon = "";
 
             if (string.IsNullOrEmpty(player1) || string.IsNullOrEmpty(player2) || player1 == player2)
             {
@@ -88,13 +88,15 @@ namespace KKApp
                 }
                 else
                 {
+                    string gamesWon;
+
                     if (ckbWinner1.IsChecked ?? false)
                     {
                         gamesWon = txtGames2.Text;
 
-                        if (string.IsNullOrEmpty(gamesWon))
+                        if (string.IsNullOrEmpty(gamesWon) || !int.TryParse(gamesWon, out int n))
                         {
-                            MessageBox.Show("Geen games ingevuld", "KKApp", MessageBoxButton.OK, MessageBoxImage.Error);
+                            MessageBox.Show("Games foutief ingevuld", "KKApp", MessageBoxButton.OK, MessageBoxImage.Error);
                             return;
                         }
 
@@ -121,6 +123,8 @@ namespace KKApp
             ckbWinner2.IsChecked = false;
             txtGames1.Text = "";
             txtGames2.Text = "";
+
+            RefreshList();
         }
 
         private void btnCopy_Click(object sender, RoutedEventArgs e)
@@ -206,6 +210,19 @@ namespace KKApp
                     }
                 }
             }
+            else
+            {
+                lblDivisionScore.Content = "Selecteer een reeks";
+                lblDivisionPlayer.Content = "Selecteer een reeks";
+            }
+        }
+
+        public void RefreshList()
+        {
+            object selectedDivision = lstDivisions.SelectedItem;
+            lstDivisions.Items.Clear();
+            fillDivisionList();
+            lstDivisions.SelectedItem = selectedDivision;
         }
     }
 }
