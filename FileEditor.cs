@@ -66,8 +66,6 @@ namespace KKApp
 
                 while ((line = sr.ReadLine()) != null)
                 {
-                    Console.WriteLine(winner);
-                    Console.WriteLine(line);
                     if (line != winner && line != loser)
                     {
                         sw.WriteLine(line);

@@ -73,48 +73,43 @@ namespace KKApp
         {
             string player1 = cmbPlayer1.Text;
             string player2 = cmbPlayer2.Text;
+            string gamesWon;
 
             if (string.IsNullOrEmpty(player1) || string.IsNullOrEmpty(player2) || player1 == player2)
             {
                 MessageBox.Show("Spelers niet goed geselecteerd", "KKApp", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            else
+
+            if (ckbWinner1.IsChecked != true && ckbWinner2.IsChecked != true)
             {
-                if (ckbWinner1.IsChecked != true && ckbWinner2.IsChecked != true)
+                MessageBox.Show("Geen winnaar aangeduid", "KKApp", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            if (ckbWinner1.IsChecked ?? false)
+            {
+                gamesWon = txtGames2.Text;
+
+                if (string.IsNullOrEmpty(gamesWon) || !int.TryParse(gamesWon, out int n))
                 {
-                    MessageBox.Show("Geen winnaar aangeduid", "KKApp", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Games foutief ingevuld", "KKApp", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
-                else
+
+                fe.SaveScore(player1, player2, true, int.Parse(gamesWon));
+            }
+            else
+            {
+                gamesWon = txtGames1.Text;
+
+                if (string.IsNullOrEmpty(gamesWon))
                 {
-                    string gamesWon;
-
-                    if (ckbWinner1.IsChecked ?? false)
-                    {
-                        gamesWon = txtGames2.Text;
-
-                        if (string.IsNullOrEmpty(gamesWon) || !int.TryParse(gamesWon, out int n))
-                        {
-                            MessageBox.Show("Games foutief ingevuld", "KKApp", MessageBoxButton.OK, MessageBoxImage.Error);
-                            return;
-                        }
-
-                        fe.SaveScore(player1, player2, true, int.Parse(gamesWon));
-                    }
-                    else
-                    {
-                        gamesWon = txtGames1.Text;
-
-                        if (string.IsNullOrEmpty(gamesWon))
-                        {
-                            MessageBox.Show("Geen games ingevuld", "KKApp", MessageBoxButton.OK, MessageBoxImage.Error);
-                            return;
-                        }
-
-                        fe.SaveScore(player1, player2, false, int.Parse(gamesWon));
-                    }
+                    MessageBox.Show("Geen games ingevuld", "KKApp", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
                 }
+
+                fe.SaveScore(player1, player2, false, int.Parse(gamesWon));
             }
 
             cmbPlayer1.Text = "";
