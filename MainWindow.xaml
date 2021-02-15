@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:KKApp"
         mc:Ignorable="d"
         Title="KKApp" Height="537.441" Width="962.806"
-        Icon="http://www.tczedelgem.be/wp-content/uploads/2016/02/Logo-TCZ.jpg">
+        Icon="tcZedelgemLogo.png">
     <Grid>
         <ListBox x:Name="lstDivisions" HorizontalAlignment="Left" Height="288" Margin="35,10,0,0" VerticalAlignment="Top" Width="550" SelectionChanged="lstDivisions_SelectionChanged"/>
         <TabControl HorizontalAlignment="Left" Height="186" Margin="35,303,0,0" VerticalAlignment="Top" Width="550">
