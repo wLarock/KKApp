@@ -12,3 +12,4 @@ E:\Repos\KKApp\obj\Debug\KKApp.csproj.GenerateResource.cache
 E:\Repos\KKApp\obj\Debug\KKApp.csproj.CoreCompileInputs.cache
 E:\Repos\KKApp\obj\Debug\KKApp.exe
 E:\Repos\KKApp\obj\Debug\KKApp.pdb
+E:\Repos\KKApp\obj\Debug\KKApp.csprojAssemblyReference.cache

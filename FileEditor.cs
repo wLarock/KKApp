@@ -99,7 +99,6 @@ namespace KKApp
         {
             string[] players = File.ReadAllLines(playerPath).Where(p => p.Contains(division)).ToArray();
             List<Player> sortedPlayers = new List<Player>();
-            
 
             if (players == null)
                 return sortedPlayers;
@@ -116,7 +115,7 @@ namespace KKApp
                     player.MatchesPlayed = int.Parse(currentplayer[3]);
                     sortedPlayers.Add(player);
                 }
-                return sortedPlayers.OrderByDescending(p => p.MatchesPlayed).OrderByDescending(p => p.score).ToList();
+                return sortedPlayers.OrderBy(p => p.MatchesPlayed).OrderByDescending(p => p.score).ToList();
             }
         }
     }
