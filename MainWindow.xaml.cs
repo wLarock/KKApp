@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace KKApp
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         FileEditor fe = new FileEditor();
